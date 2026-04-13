@@ -7,13 +7,14 @@ import java.util.Date;
 
 public class EmployeeRegistrationForm {
 
-    JFrame frame;
+    public JFrame frame;
 
-    JTextField nameField, emailField;
-    JPasswordField passwordField;
-    JComboBox<String> departmentBox;
-    JTree orgTree;
-    JSpinner dateSpinner;
+    public JTextField nameField;
+    public JTextField emailField;
+    public JPasswordField passwordField;
+    public JComboBox<String> departmentBox;
+    public JTree orgTree;
+    public JSpinner dateSpinner;
 
     public void createAndShowGUI() {
         initializeFrame();
@@ -130,7 +131,7 @@ public class EmployeeRegistrationForm {
         JOptionPane.showMessageDialog(frame, summary);
     }
 
-    boolean validateInput(String name, String email, String password, Object node) {
+    public boolean validateInput(String name, String email, String password, Object node) {
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || node == null) {
             JOptionPane.showMessageDialog(frame, "Please fill all fields!");
             return false;
@@ -138,8 +139,8 @@ public class EmployeeRegistrationForm {
         return true;
     }
 
-    String buildSummary(String name, String email, String password,
-                        String department, Object node, Date dob) {
+    public String buildSummary(String name, String email, String password,
+                               String department, Object node, Date dob) {
 
         String maskedPassword = "*".repeat(password.length());
 
